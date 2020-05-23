@@ -1,10 +1,11 @@
 import React from 'react'
+import './news-card.css'
 
 class NewsCard extends React.Component{
     constructor(params) {
         super();
         this.state={
-
+            data:[]
         }
     }
 
@@ -28,11 +29,10 @@ class NewsCard extends React.Component{
                 console.error('There was an error!', error);
             });
     }
-
     render() {
         return(
-            <div>
-            
+            <div className='news-card'>
+                NewsCard
             </div>
         )
     }
