@@ -2,37 +2,19 @@ import React from 'react'
 import './news-card.css'
 
 class NewsCard extends React.Component{
-    constructor(params) {
-        super();
-        this.state={
-            data:[]
-        }
-    }
-
-    componentDidMount() {
-        // GET request using fetch with error handling
-        fetch('https://gnews.io/api/v3/search?q=corona&token=0371457f5bd5c762285f678b1e0a9df3')
-            .then(async response => {
-                const data = await response.json();
-    
-                // check for error response
-                if (!response.ok) {
-                    // get error message from body or default to response statusText
-                    const error = (data && data.message) || response.statusText;
-                    return Promise.reject(error);
-                }
-    
-                this.setState({ data: data.articles })
-            })
-            .catch(error => {
-                this.setState({ errorMessage: error.toString() });
-                console.error('There was an error!', error);
-            });
-    }
     render() {
+        const {title, image,description,time, sourceName, sourceUrl}=this.props
         return(
             <div className='news-card'>
-                NewsCard
+                <img className='news-img' src={image} alt='news-img' />
+                <div className='news-card-text'>
+                    <div className='news-title'>{title}</div>
+                    <div>{description}</div>
+                    <div className='news-card-footer'>
+                        {time}<br/><br/>
+                        <a href={sourceUrl}>View here at {sourceName}</a>
+                    </div>
+                </div>
             </div>
         )
     }
