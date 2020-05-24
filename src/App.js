@@ -16,7 +16,7 @@ class App extends React.Component{
   }
 
   componentDidMount() {
-      fetch('https://gnews.io/api/v3/search?q=corona&token=0371457f5bd5c762285f678b1e0a9df3')
+      fetch('https://gnews.io/api/v3/search?q=corona&token=2307ba2c2d3055d75b721a06004addc8')
       // fetch()
           .then(async response => {
             const rawData = await response.json();
@@ -25,16 +25,20 @@ class App extends React.Component{
                 const error = (rawData && rawData.message) || response.statusText;
                 return Promise.reject(error);
             }
-            this.setState({ rawData: rawData.articles })
+            //this.setState({ rawData: rawData.articles })
+            let postData={ rawData: rawData.articles }
+            console.log(this.state)
+            console.log(postData)
               
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({url:this.state.rawData})
+                body: JSON.stringify({url:postData})
             };
             const res = await fetch('http://localhost:5000/load', requestOptions);
             const data = await res.json();
             this.setState({ data: data });
+            console.log(this.state)
           })
           .catch(error => {
               this.setState({ errorMessage: error.toString() });
