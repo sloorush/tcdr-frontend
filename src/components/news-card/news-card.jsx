@@ -12,7 +12,7 @@ class NewsCard extends React.Component{
                     <div>{description}</div>
                     <div className='news-card-footer'>
                         {time}<br/><br/>
-                        <a href={sourceUrl}>View here at {sourceName}</a>
+                        <a rel="noopener noreferrer"  target='_blank' href={sourceUrl}>View here at {sourceName}</a>
                     </div>
                 </div>
             </div>
