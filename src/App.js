@@ -17,8 +17,8 @@ class App extends React.Component{
   }
 
   componentDidMount() {
-      //fetch('https://gnews.io/api/v3/search?q=corona&token=2307ba2c2d3055d75b721a06004addc8')
-      fetch()
+      fetch('https://gnews.io/api/v3/search?q=corona&token=2307ba2c2d3055d75b721a06004addc8')
+      //fetch()
           .then(async response => {
             const rawData = await response.json();
 
