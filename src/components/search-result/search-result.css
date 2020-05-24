@@ -1,0 +1,38 @@
+/* .news-card{
+    background-color: #121212;
+    margin: 0 12.5%;
+    padding: 1rem;
+    display: flex;
+    margin: 2rem 12.5%;
+}
+
+.news-img{
+    width: 25rem;
+    display: flex;
+    align-self: center;
+}
+
+.news-card-text{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 2rem;
+    padding: 1rem;
+}
+
+.news-title{
+    font-size: 28px;
+    padding: 1rem 0;
+}
+
+.news-card-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: flex-end;
+    align-self: flex-end;
+    padding: 2rem 0 0 0;
+}
+
+a{
+    color: #E34625;
+} */

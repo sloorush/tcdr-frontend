@@ -1,5 +1,7 @@
 import React from 'react'
 import './header.css'
+import SearchResult from '../search-result/search-result'
+// import NewsCard from '../news-card/news-card'
 
 class Header extends React.Component{
     constructor() {
@@ -34,7 +36,8 @@ class Header extends React.Component{
                     return Promise.reject(error);
                 }
                 this.setState({ news: data })
-                this.props.callbackFromParent(this.news);
+                console.log(data)
+                this.props.callbackFromParent(this.state.news);
             })
             .catch(error => {
                 this.setState({ errorMessage: error.toString() });
@@ -89,6 +92,8 @@ class Header extends React.Component{
                     </div>
                     <div onClick={this.handlePredict.bind(this)} id="btn"><span class="noselect">Is this fake?</span><div id="circle"></div></div>
                     <div onClick={this.handleSearch.bind(this)} id="btn"><span class="noselect">Find some research</span><div id="circle"></div></div>
+                    
+                    {this.state.news?<SearchResult  title={this.state.news.title} sourceUrl={this.state.news.url} time={this.state.news.publishedAt} sourceName={this.state.news.sourceName} credibility={this.state.news.credibility} />:false}
                 </form>            
             </div> 
         )

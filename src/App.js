@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import './App.css';
 
 import BigLogo from './images/bigLogo.svg'
@@ -16,8 +17,8 @@ class App extends React.Component{
   }
 
   componentDidMount() {
-      fetch('https://gnews.io/api/v3/search?q=corona&token=2307ba2c2d3055d75b721a06004addc8')
-      // fetch()
+      //fetch('https://gnews.io/api/v3/search?q=corona&token=2307ba2c2d3055d75b721a06004addc8')
+      fetch()
           .then(async response => {
             const rawData = await response.json();
 
@@ -58,18 +59,6 @@ class App extends React.Component{
         <div className='logo'>
         <img src={BigLogo} alt="React Logo" />
         </div>
-        {
-          dataFromChild
-          ?
-          <NewsCard title={this.state.title} image={this.state.image} description={this.dataFromChild.news.description} sourceUrl={this.dstate.url} time={this.state.publishedAt} sourceName={this.state.source.name} credibility={this.state.credibility} />
-          :false
-        }
-        {
-          dataFromChild
-          ?
-          <div>hey</div>
-          :false
-        }
 
         {data.map(news => <NewsCard title={news.title} image={news.image} description={news.description} sourceUrl={news.url} time={news.publishedAt} sourceName={news.sourceName} credibility={news.credibility} />)}
 
@@ -90,7 +79,6 @@ class App extends React.Component{
           sourceName= "This Is Money on MSN.com"
           sourceUrl= "https://www.msn.com/en-gb/finance/other/gazundered-by-the-corona-sharks-how-ruthless-house-buyers-are-slashing-offers-and-blaming-the-virus/ar-BB14vtP1"
         />
-        
       </div>
     );
   }
