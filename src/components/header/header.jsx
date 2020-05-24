@@ -31,7 +31,8 @@ class Header extends React.Component{
                     const error = (data && data.message) || response.status;
                     return Promise.reject(error);
                 }
-                this.setState({ data: data })
+                this.setState({ news: data })
+                this.props.callbackFromParent(this.news);
             })
             .catch(error => {
                 this.setState({ errorMessage: error.toString() });
@@ -57,7 +58,8 @@ class Header extends React.Component{
                     return Promise.reject(error);
                 }
     
-                this.setState({ postId: data.id })
+                this.setState({ sci: data })
+                this.props.callbackFromParent(this.sci);
             })
             .catch(error => {
                 this.setState({ errorMessage: error.toString() });
