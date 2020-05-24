@@ -1,5 +1,11 @@
 import React from 'react';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import './App.css';
 
@@ -7,12 +13,14 @@ import BigLogo from './images/bigLogo.svg'
 
 import Header from './components/header/header'
 import NewsCard from './components/news-card/news-card'
+import SciLit from './components/scilit/scilit'
 
 class App extends React.Component{
   constructor(params) {
     super();
     this.state={
-        data:[]
+        data:[],
+        
     }
   }
 
@@ -59,6 +67,24 @@ class App extends React.Component{
         <div className='logo'>
         <img src={BigLogo} alt="React Logo" />
         </div>
+
+        <Route exact path="/scientificliterature">
+          <SciLit 
+          title='COVID-19 vaccines: knowing the unknown.' 
+          description='COVID-19 is caused by a new coronavirus, SARS-CoV-2. Previous research on other coronavirus vaccines, such as FIPV, SARS and MERS, has provided valuable information. We are therefore optimistic about the rapid development of COVID-19 vaccine.'
+          sourceUrl= 'http://dx.doi.org/10.1002/eji.202048663'
+          />
+          <SciLit 
+          title='Immunogenicity of a DNA vaccine candidate for COVID-19' 
+          description='The coronavirus family member, SARS-CoV-2 has been identified as the causal agent for the pandemic viral pneumonia disease, COVID-19. At this time, no vaccine is available to control further dissemination of the disease. We have previously engineered a synthetic DNA vaccine targeting the MERS coronavirus Spike (S) protein, the major surface antigen of coronaviruses.COVID-19 is caused by a new coronavirus, SARS-CoV-2. Previous research on other coronavirus vaccines, such as FIPV, SARS and MERS, has provided valuable information. We are therefore optimistic about the rapid development of COVID-19 vaccine.'
+          />
+          <SciLit 
+          title='An effective CTL peptide vaccine for Ebola Zaire Based on Survivors CD8+ targeting of a particular nucleocapsid protein epitope with potential implications for COVID-19 vaccine design.' 
+          description='COVID-19 is caused by a new coronavirus, SARS-CoV-2. Previous research on other coronavirus vaccines, such as FIPV, SARS and MERS, has provided valuable information. We are therefore optimistic about the rapid development of COVID-19 vaccine.'
+          sourceUrl= 'https://linkinghub.elsevier.com/retrieve/pii/S0264410X20305181'
+          />
+          <h1 style={{margin:'0 12.5%'}}>FOR Really Real News on COVID-19</h1>
+        </Route>
 
         {data.map(news => <NewsCard title={news.title} image={news.image} description={news.description} sourceUrl={news.url} time={news.publishedAt} sourceName={news.sourceName} credibility={news.credibility} />)}
 
