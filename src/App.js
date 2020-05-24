@@ -71,7 +71,7 @@ class App extends React.Component{
           :false
         }
 
-        {data.map(news => <NewsCard title={news.title} image={news.image} description={news.description} sourceUrl={news.url} time={news.publishedAt} sourceName={news.source.name} credibility={news.credibility} />)}
+        {data.map(news => <NewsCard title={news.title} image={news.image} description={news.description} sourceUrl={news.url} time={news.publishedAt} sourceName={news.sourceName} credibility={news.credibility} />)}
 
         <NewsCard 
           title='Gazundered by the corona sharks: How ruthless house buyers are slashing offers and blaming the virus' 
