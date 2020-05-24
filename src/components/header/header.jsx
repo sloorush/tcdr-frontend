@@ -18,13 +18,15 @@ class Header extends React.Component{
 
     handlePredict(event) {
         console.log(this.state)
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({body:this.state})
-        };
-        fetch('http://localhost:5000/predict', requestOptions)
-            .then(async response => {
+            fetch("http://localhost:5000/predict", {
+            method:"POST",
+            cache: "no-cache",
+            headers:{
+                "content_type":"application/json",
+            },
+            body:JSON.stringify(this.state.value)
+            }
+        ).then(async response => {
                 const data = await response.json();
     
                 if (!response.ok) {

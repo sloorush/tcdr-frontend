@@ -32,7 +32,7 @@ class App extends React.Component{
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({url:this.state.rawData})
             };
-            const res = await fetch('localhost:5000/load', requestOptions);
+            const res = await fetch('http://localhost:5000/load', requestOptions);
             const data = await res.json();
             this.setState({ data: data });
           })
