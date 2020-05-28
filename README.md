@@ -5,3 +5,5 @@ To start React Server
 <pre>npm start</pre>
 
 The backend and the ML code is in this repository <a href='https://github.com/liuhh02/tcdr-ml'>Here</a>
+
+View Full Project description on <a href='https://devpost.com/software/too-complicated-didn-read'>Devpost</a>
