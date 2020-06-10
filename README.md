@@ -1,4 +1,7 @@
 # Too Complicated, Didn't Read!
+
+![tcdr](https://i.ibb.co/vhFTGZ5/Frame-4.png)
+
 ## Inspiration
 Scientific literature too complicated to understand? Flooded with too many news articles? Use TC,DR! to simplify the information overload about COVID-19!
 
